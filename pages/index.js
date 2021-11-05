@@ -4,7 +4,7 @@ import Sidebar from "../components/sidebar";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
-  const title = "Dashboard";
+  var title = "Dashboard";
   return (
     <div className={styles.container}>
       <Header title={title} />

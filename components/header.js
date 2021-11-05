@@ -6,6 +6,7 @@ export default function Header(data) {
   const classNames = (...classes) => {
     return classes.filter(Boolean).join(" ");
   };
+
   return (
     <div className="fixed flex justify-between w-full items-center border-b border-gray-200 p-2">
       <Image
@@ -13,7 +14,7 @@ export default function Header(data) {
         width="160"
         height="80"
         alt="logo"
-        className="w-48 sm:w-56 md:w-64"
+        className="w-48 sm:w-56 md:w-64 cursor-pointer"
       />
       <p className="font-bold text-gray-500 text-2xl">{data.title}</p>
       <Menu as="div" className="relative inline-block text-left mr-12">
