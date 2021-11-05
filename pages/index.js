@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
@@ -13,10 +12,10 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://cocoa.pandaok@gmail.com">Crew!</a>
+          Welcome to <a href="mailto:cocoa.pandaok@gmail.com">Crew!</a>
         </h1>
 
-        <p className={styles.description}>NextJS + Tailwind</p>
+        <p className={styles.description}>NextJS + Tailwind Project</p>
 
         <div className={styles.grid}>
           <a
@@ -45,15 +44,13 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{" Web Bear "}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
+          Powered by &nbsp;<strong>{" Web Bear "}</strong>
         </a>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
+          className="bg-red-400"
         >
           Address {" live:.cid.7c4506e111f71ae6 "}
         </a>
