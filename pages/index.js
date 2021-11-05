@@ -16,10 +16,7 @@ export default function Home() {
           Welcome to <a href="https://cocoa.pandaok@gmail.com">Crew!</a>
         </h1>
 
-        <p className={styles.description}>
-          Get started by editing{" "}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+        <p className={styles.description}>NextJS + Tailwind</p>
 
         <div className={styles.grid}>
           <a
