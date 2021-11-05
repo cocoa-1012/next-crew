@@ -50,7 +50,6 @@ export default function Home() {
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-red-400"
         >
           Address {" live:.cid.7c4506e111f71ae6 "}
         </a>
