@@ -111,7 +111,7 @@ export default function DashboardMain() {
   return (
     <div className="w-full h-full bg-gray-400 scroll-y-auto p-8">
       <div className="flex flex-col justify-around  w-full h-full">
-        <div className="grid grid-cols-4 gap-4 my-8">
+        <div className="grid grid-cols-4 gap-4 my-4">
           <div className="w-60 h-40 mx-auto">
             <Card
               title={"Total Attacks"}
@@ -144,7 +144,7 @@ export default function DashboardMain() {
             />
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-8 my-8">
+        <div className="grid grid-cols-2 gap-8 mt-4">
           <div className=" h-72 ">
             <Table1 data={People1} />
           </div>
@@ -152,7 +152,7 @@ export default function DashboardMain() {
             <Table1 data={People2} />
           </div>
         </div>
-        <div className="grid grid-cols-1 gap-4 mb-8">
+        <div className="grid grid-cols-1 gap-4 mb-4">
           <div className="w-full h-72">
             <Table1 data={People3} />
           </div>
