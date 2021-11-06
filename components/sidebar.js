@@ -13,7 +13,7 @@ export default function Sidebar(data) {
               <div
                 className={classNames(
                   data.index == 1
-                    ? "bg-gray-100 text-gray-900"
+                    ? "bg-gray-100 text-gray-700 font-bold"
                     : "text-gray-100",
                   "mb-2 px-4 py-4 flex flex-row  border-gray-300 hover:text-black   hover:bg-gray-200  hover:font-bold rounded rounded-lg"
                 )}
@@ -38,7 +38,7 @@ export default function Sidebar(data) {
               <div
                 className={classNames(
                   data.index == 2
-                    ? "bg-gray-100 text-gray-900"
+                    ? "bg-gray-100 text-gray-900 font-bold"
                     : "text-gray-100",
                   "mb-2 px-4 py-4 flex flex-row  border-gray-300 hover:text-black   hover:bg-gray-200  hover:font-bold rounded rounded-lg"
                 )}
@@ -67,7 +67,7 @@ export default function Sidebar(data) {
               <div
                 className={classNames(
                   data.index == 3
-                    ? "bg-gray-100 text-gray-900"
+                    ? "bg-gray-100 text-gray-900 font-bold"
                     : "text-gray-100",
                   "mb-2 px-4 py-4 flex flex-row  border-gray-300 hover:text-black   hover:bg-gray-200  hover:font-bold rounded rounded-lg"
                 )}
@@ -92,7 +92,7 @@ export default function Sidebar(data) {
               <div
                 className={classNames(
                   data.index == 4
-                    ? "bg-gray-100 text-gray-900"
+                    ? "bg-gray-100 text-gray-900 font-bold"
                     : "text-gray-100",
                   "mb-2 px-4 py-4 flex flex-row  border-gray-300 hover:text-black   hover:bg-gray-200  hover:font-bold rounded rounded-lg"
                 )}

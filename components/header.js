@@ -1,22 +1,26 @@
+/* eslint-disable @next/next/link-passhref */
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 import Image from "next/image";
 import Link from "next/link";
 import { Fragment } from "react";
+
 export default function Header(data) {
   const classNames = (...classes) => {
     return classes.filter(Boolean).join(" ");
   };
 
   return (
-    <div className="flex justify-between w-full items-center border-b border-gray-200 p-2">
-      <Image
-        src={"/logo.png"}
-        width="160"
-        height="80"
-        alt="logo"
-        className="w-48 sm:w-56 md:w-64 cursor-pointer"
-      />
+    <div className="flex justify-between w-full items-center border-b border-gray-200 p-2 shadow-md shadow z-10">
+      <Link href="/dashboard">
+        <Image
+          src={"/logo.png"}
+          width="160"
+          height="80"
+          alt="logo"
+          className="w-48 sm:w-56 md:w-64 cursor-pointer"
+        />
+      </Link>
       <p className="font-bold text-gray-500 text-2xl">{data.title}</p>
       <Menu as="div" className="relative inline-block text-left mr-12">
         <div>

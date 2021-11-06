@@ -107,9 +107,8 @@ const AttackData = {
   pastFailed: 57,
 };
 export default function DashboardMain() {
-  console.log("PEi", typeof People1);
   return (
-    <div className="w-full h-full bg-gray-400 scroll-y-auto p-8">
+    <div className="w-full h-full bg-gray-100 scroll-y-auto p-8">
       <div className="flex flex-col justify-around  w-full h-full">
         <div className="grid grid-cols-4 gap-4 my-4">
           <div className="w-60 h-40 mx-auto">

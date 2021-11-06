@@ -4,20 +4,22 @@ const Data = {
 };
 export default function Card(data) {
   return (
-    <div className="shadow-md rounded-md bg-white">
+    <div className="shadow-md rounded-xl bg-white">
       <div className="p-5">
-        <h5 className="text-lg font-semibold mb-2">{data.title}</h5>
-        <p className="text-purple-600 font-bold text-2xl mb-4 text-right">
+        <h5 className="text-lg text-gray-600 font-semibold mb-2">
+          {data.title}
+        </h5>
+        <p className="text-gray-700 font-bold text-2xl mb-4 text-right">
           {data.amount}{" "}
           <span className="text-gray-400 text-lg">
-            from Last <span className="text-green-300">{data.pastAmount}</span>
+            from Last {data.pastAmount}
           </span>
         </p>
-        <div className="flex items-center justify-around">
+        <div className="flex items-center">
           {data.title !== "Average Attacks Rate" && (
-            <p className="text-green-600 bg-gray-200 rounded-xl text-center px-2">
+            <p className="text-gray-500 text-center px-4">
               rate{" "}
-              <span className="font-bold text-red-600">
+              <span className="font-bold text-gray-600">
                 {Math.floor((data.amount / data.pastAmount) * 100)}%
               </span>
             </p>
@@ -41,10 +43,11 @@ export default function Card(data) {
           ease-linear
           transition-all
           duration-150
+          ml-auto
         "
             type="button"
           >
-            Detail &#8594;
+            Detail
           </button>
         </div>
       </div>

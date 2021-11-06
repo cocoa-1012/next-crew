@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/link-passhref */
 import Link from "next/link";
 import React, { useState } from "react";
 export default function Login() {
