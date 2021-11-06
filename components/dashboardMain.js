@@ -1,6 +1,103 @@
+// import People1 from "../const/tableData";
 import Card from "./card";
 import Table1 from "./table1";
+const People1 = [
+  {
+    name: "Adam Cooper",
+    title: "Regional Paradigm Technician",
+    department: "Optimization",
+    role: "Admin",
+    email: "jane.cooper@example.com",
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
+  },
+  {
+    name: "David Coferfield",
+    title: "Regional Paradigm Technician",
+    department: "Optimization",
+    role: "Developer",
+    email: "jane.cooper@example.com",
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
+  },
+  {
+    name: "Jane Cooper",
+    title: "Regional Paradigm Technician",
+    department: "Front end",
+    role: "Designer",
+    email: "jane.cooper@example.com",
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
+  },
+];
 
+const People2 = [
+  {
+    name: "Jakub Cabala",
+    title: "Regional Paradigm Technician",
+    department: "Optimization",
+    role: "Admin",
+    email: "jane.cooper@example.com",
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
+  },
+  {
+    name: "Jane Cooper",
+    title: "Regional Paradigm Technician",
+    department: "Optimization",
+    role: "Admin",
+    email: "jane.cooper@example.com",
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
+  },
+  {
+    name: "Jane Cooper",
+    title: "Regional Paradigm Technician",
+    department: "Optimization",
+    role: "Admin",
+    email: "jane.cooper@example.com",
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
+  },
+];
+const People3 = [
+  {
+    name: "Jane Cooper",
+    title: "Regional Paradigm Technician",
+    department: "Front end",
+    role: "Designer",
+    email: "jane.cooper@example.com",
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
+  },
+  {
+    name: "Jakub Cabala",
+    title: "Regional Paradigm Technician",
+    department: "Optimization",
+    role: "Admin",
+    email: "jane.cooper@example.com",
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
+  },
+  {
+    name: "Jane Cooper",
+    title: "Regional Paradigm Technician",
+    department: "Optimization",
+    role: "Admin",
+    email: "jane.cooper@example.com",
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
+  },
+  {
+    name: "Jane Cooper",
+    title: "Regional Paradigm Technician",
+    department: "Optimization",
+    role: "Admin",
+    email: "jane.cooper@example.com",
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
+  },
+];
 const AttackData = {
   total: 125,
   actived: 80,
@@ -10,6 +107,7 @@ const AttackData = {
   pastFailed: 57,
 };
 export default function DashboardMain() {
+  console.log("PEi", typeof People1);
   return (
     <div className="w-full h-full bg-gray-400 scroll-y-auto p-8">
       <div className="flex flex-col justify-around  w-full h-full">
@@ -48,14 +146,16 @@ export default function DashboardMain() {
         </div>
         <div className="grid grid-cols-2 gap-8 my-8">
           <div className=" h-72 ">
-            <Table1 />
+            <Table1 data={People1} />
           </div>
           <div className=" h-72 ">
-            <Table1 />
+            <Table1 data={People2} />
           </div>
         </div>
-        <div className="grid grid-cols-1 gap-4 my-8">
-          <div className="w-full h-72 bg-green-300">Latest Attacks</div>
+        <div className="grid grid-cols-1 gap-4 mb-8">
+          <div className="w-full h-72">
+            <Table1 data={People3} />
+          </div>
         </div>
       </div>
     </div>
