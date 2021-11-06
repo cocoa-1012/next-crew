@@ -14,12 +14,14 @@ export default function Card(data) {
           </span>
         </p>
         <div className="flex items-center justify-around">
-          <p className="text-green-600 bg-gray-200 rounded-xl text-center px-2">
-            rate{" "}
-            <span className="font-bold text-red-600">
-              {Math.floor((data.amount / data.pastAmount) * 100)}%
-            </span>
-          </p>
+          {data.title !== "Average Attacks Rate" && (
+            <p className="text-green-600 bg-gray-200 rounded-xl text-center px-2">
+              rate{" "}
+              <span className="font-bold text-red-600">
+                {Math.floor((data.amount / data.pastAmount) * 100)}%
+              </span>
+            </p>
+          )}
           <button
             className="
           bg-purple-500
