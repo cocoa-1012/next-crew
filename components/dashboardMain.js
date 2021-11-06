@@ -135,12 +135,14 @@ export default function DashboardMain() {
           </div>
           <div className="w-60 h-40 mx-auto">
             <Card
-              title={"Average Attacks"}
-              amount={(AttackData.actived / AttackData.total) * 100}
-              pastAmount={Math.floor(
-                (AttackData.pastActived / AttackData.pastTotal) * 100,
-                -1
-              )}
+              title={"Average Attacks Rate"}
+              amount={(AttackData.actived / AttackData.total) * 100 + "%"}
+              pastAmount={
+                Math.floor(
+                  (AttackData.pastActived / AttackData.pastTotal) * 100,
+                  -1
+                ) + "%"
+              }
             />
           </div>
         </div>
