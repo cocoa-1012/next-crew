@@ -1,6 +1,7 @@
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 import Image from "next/image";
+import Link from "next/link";
 import { Fragment } from "react";
 export default function Header(data) {
   const classNames = (...classes) => {
@@ -72,15 +73,17 @@ export default function Header(data) {
             <div className="py-1">
               <Menu.Item>
                 {({ active }) => (
-                  <a
-                    href="#"
-                    className={classNames(
-                      active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                      "block px-4 py-2 text-sm"
-                    )}
-                  >
-                    Log Out
-                  </a>
+                  <Link href="/">
+                    <a
+                      href="#"
+                      className={classNames(
+                        active ? "bg-gray-100 text-gray-900" : "text-gray-700",
+                        "block px-4 py-2 text-sm"
+                      )}
+                    >
+                      Log Out
+                    </a>
+                  </Link>
                 )}
               </Menu.Item>
             </div>
