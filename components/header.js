@@ -8,7 +8,7 @@ export default function Header(data) {
   };
 
   return (
-    <div className="fixed flex justify-between w-full items-center border-b border-gray-200 p-2">
+    <div className="flex justify-between w-full items-center border-b border-gray-200 p-2">
       <Image
         src={"/logo.png"}
         width="160"
