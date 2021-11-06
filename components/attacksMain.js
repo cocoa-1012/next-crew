@@ -59,31 +59,27 @@ export default function AttacksMain() {
   return (
     <div className="w-full h-full bg-gray-100 scroll-y-auto p-8">
       <div className="flex flex-col justify-around  w-full h-full">
-        <div className="flex flex-row justify-between items-start px-6 py-12 my-4 bg-white rounded shadow">
-          <p className="p-4 rounded text-gray-700 flex-1">
-            LoremLore mLoremLoremLoremLoremLo remLoremLoremLore mLoremLor
-            emLoremLo remLoremLo remLoremLoremLo remLore mLoremLo remLoremL
-            oremLoremLoremLoremLo remLoremLore mLoremLoremLoremLoremLoremLorem
-            LoremLo remLor emLoremLoremLoremLoremLo remLoremLore
-            mLoremLoremLoremLoremLoremLore mLoremLoremLoremLorem LoremLore
-            mLoremLoremLoremLoremLo remLoremLoremLore mLoremLor emLoremLo
-            remLoremLo remLoremLoremLo remLore mLoremLo remLoremL
-            oremLoremLoremLoremLo remLoremLore mLoremLoremLoremLoremLoremLorem
-            LoremLo remLor emLoremLoremLoremLoremLo remLoremLore
-            mLoremLoremLoremLoremLoremLore mLoremLoremLoremLorem LoremLore
-            mLoremLoremLoremLoremLo remLoremLoremLore mLoremLor emLoremLo
-            remLoremLo remLoremLoremLo remLore mLoremLo remLoremL
-            oremLoremLoremLoremLo remLoremLore mLoremLoremLoremLoremLoremLorem
-            LoremLo remLor emLoremLoremLoremLoremLo remLoremLore
-            mLoremLoremLoremLoremLoremLore mLoremLoremLoremLorem LoremLore
-            mLoremLoremLoremLoremLo remLoremLoremLore mLoremLor emLoremLo
-            remLoremLo remLoremLoremLo remLore mLoremLo remLoremL
-            oremLoremLoremLoremLo remLoremLore mLoremLoremLoremLoremLoremLorem
-            LoremLo remLor emLoremLoremLoremLoremLo remLoremLore
-            mLoremLoremLoremLoremLoremLore mLoremLoremLoremLorem
+        <div className="flex flex-row justify-between items-start px-12 py-12 my-4 bg-white rounded shadow">
+          <p className="rounded text-gray-700 flex-1">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s
+            with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus
+            PageMaker including versions of Lorem Ipsum. Lorem ipsum dolor sit
+            amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.
           </p>
-          <button className="ml-10 bg-purple-700 rounded px-8 py-4 text-white font-bold uppercase hover:bg-purple-500">
-            Click
+          <button className="ml-32 bg-purple-700 rounded px-8 py-3 text-white font-bold uppercase hover:bg-purple-500">
+            View
           </button>
         </div>
         <div className="grid grid-cols-1 gap-8 mt-4">
