@@ -65,9 +65,15 @@ export default function Table1(data) {
                       </div>
                     </td>
                     <td className="px-4 py-4 whitespace-nowrap">
-                      <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                        {person.status}
-                      </span>
+                      {person.status === "ON" ? (
+                        <span className="px-2 inline-flex text-xs leading-5 font-semibold bg-green-100 rounded-full text-green-800">
+                          {person.status}
+                        </span>
+                      ) : (
+                        <span className="px-2 inline-flex text-xs leading-5 font-semibold bg-gray-100 rounded-full text-gray-500">
+                          {person.status}
+                        </span>
+                      )}
                     </td>
                     <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500">
                       {person.creationDate}
