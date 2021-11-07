@@ -1,5 +1,5 @@
 // import People1 from "../const/tableData";
-import Table2 from "./table2";
+import AttackTable from "./attackTable";
 const Attacks = [
   {
     name: "Attack 1",
@@ -73,7 +73,7 @@ export default function AttacksMain() {
         </div>
         <div className="grid grid-cols-1 gap-8 mt-4">
           <div className=" h-auto ">
-            <Table2 data={Attacks} />
+            <AttackTable data={Attacks} />
           </div>
         </div>
         <div className="grid grid-cols-1 gap-4 mt-4">

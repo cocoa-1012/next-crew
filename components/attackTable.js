@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 
-export default function Table1(data) {
+export default function AttackTable(data) {
   return (
     <div className="flex flex-col bg">
       <div className="-my-2 overflow-hidden sm:-mx-6 lg:-mx-8">
