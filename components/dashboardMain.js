@@ -145,15 +145,18 @@ export default function DashboardMain() {
           </div>
         </div>
         <div className="grid grid-cols-2 gap-8 mt-4">
-          <div className=" h-72 ">
+          <div className=" h-auto ">
+            <p className="font-bold text-gray-500 mx-8 p-2">Target1</p>
             <Table1 data={People1} />
           </div>
-          <div className=" h-72 ">
+          <div className=" h-auto ">
+            <p className="font-bold text-gray-500 mx-8 p-2">Target2</p>
             <Table1 data={People2} />
           </div>
         </div>
-        <div className="grid grid-cols-1 gap-4 mb-12">
-          <div className="w-full h-72">
+        <div className="grid grid-cols-1 gap-4 my-8">
+          <div className="w-full h-auto">
+            <p className="font-bold text-gray-500 mx-8 p-2">Latest Attacks</p>
             <Table1 data={People3} />
           </div>
         </div>

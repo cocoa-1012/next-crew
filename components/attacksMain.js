@@ -1,60 +1,49 @@
 // import People1 from "../const/tableData";
-import Table1 from "./table1";
-const People1 = [
+import Table2 from "./table2";
+const Attacks = [
   {
-    name: "Adam Cooper",
-    title: "Regional Paradigm Technician",
-    department: "Optimization",
-    role: "Admin",
-    email: "jane.cooper@example.com",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
+    name: "Attack 1",
+    type: "Normal",
+    params: "params 1",
+    status: "ON",
+    creationDate: "09/11/2020",
   },
   {
-    name: "David Coferfield",
-    title: "Regional Paradigm Technician",
-    department: "Optimization",
-    role: "Developer",
-    email: "jane.cooper@example.com",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
+    name: "Attack 2",
+    type: "Cross-Site Scripting (XSS)",
+    params: "params 2",
+    status: "OFF",
+    creationDate: "12/04/2020",
   },
   {
-    name: "Jane Cooper",
-    title: "Regional Paradigm Technician",
-    department: "Front end",
-    role: "Designer",
-    email: "jane.cooper@example.com",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
+    name: "Attack 3",
+    type: "Injection Attacks",
+    params: "params 3",
+    status: "OFF",
+    creationDate: "12/12/2020",
   },
   {
-    name: "Jakub Cabala",
-    title: "Regional Paradigm Technician",
-    department: "Optimization",
-    role: "Admin",
-    email: "jane.cooper@example.com",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
+    name: "Attack 4",
+    type: "Zero-Day Attack",
+    params: "params 4",
+    status: "ON",
+    creationDate: "08/11/2020",
   },
   {
-    name: "Jane Cooper",
-    title: "Regional Paradigm Technician",
-    department: "Optimization",
-    role: "Admin",
-    email: "jane.cooper@example.com",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
+    name: "Attack 5",
+    type: "DDoS",
+    params: "params 5",
+    status: "OFF",
+    creationDate: "02/02/2020",
+  },
+  {
+    name: "Attack 6",
+    type: "Brute Force Attack",
+    params: "params 6",
+    status: "ON",
+    creationDate: "09/03/2020",
   },
 ];
-const AttackData = {
-  total: 125,
-  actived: 80,
-  failed: 45,
-  pastTotal: 130,
-  pastActived: 73,
-  pastFailed: 57,
-};
 export default function AttacksMain() {
   return (
     <div className="w-full h-full bg-gray-100 scroll-y-auto p-8">
@@ -78,13 +67,13 @@ export default function AttacksMain() {
             cupidatat non proident, sunt in culpa qui officia deserunt mollit
             anim id est laborum.
           </p>
-          <button className="ml-32 bg-purple-700 rounded px-8 py-3 text-white font-bold uppercase hover:bg-purple-500">
-            View
+          <button className="ml-16 bg-purple-700 rounded px-8 py-3 text-white font-bold uppercase hover:bg-purple-500">
+            New Attack
           </button>
         </div>
         <div className="grid grid-cols-1 gap-8 mt-4">
           <div className=" h-auto ">
-            <Table1 data={People1} />
+            <Table2 data={Attacks} />
           </div>
         </div>
         <div className="grid grid-cols-1 gap-4 mt-4">
