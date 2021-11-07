@@ -56,7 +56,7 @@ export default function Modal() {
                       <option>https://example5.com</option>
                     </select>
                   </div>
-                  <div className="bg-gray-100 grid grid-cols-2 gaps-4 flex p-8">
+                  <div className="bg-gray-100 rounded-md grid grid-cols-2 gaps-4 flex p-8">
                     <div className="flex items-start justify-start mx-20">
                       <div className="text-gray-700 font-semibold">
                         <p>Attack Type</p>
