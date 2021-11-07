@@ -17,7 +17,7 @@ export default function Modal() {
               {/*content*/}
               <div className="bg-gray-200 border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                 {/*header*/}
-                {/* <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
+                <div className="flex items-start justify-between px-8 py-2 border-b border-solid border-blueGray-400 rounded-t">
                   <h3 className="text-3xl font-semibold">New attack</h3>
                   <button
                     className="p-1 ml-auto bg-transparent border-0 text-black opacity-50 float-right text-3xl leading-none font-semibold outline-none focus:outline-none hover:opacity-100"
@@ -27,22 +27,22 @@ export default function Modal() {
                       &times;
                     </span>
                   </button>
-                </div> */}
+                </div>
                 {/*body*/}
                 <div className="relative p-6 flex-auto">
-                  <div className="bg-gray-100 p-4 rounded-md flex items-center w-full">
-                    <div className="w-28 h-20 bg-white rounded-full"></div>
-                    <h1 className="text-4xl font-bold px-4">&#10230;</h1>
-                    <div className="w-28 h-20 bg-white rounded-full"></div>
-                    <h1 className="text-4xl font-bold px-4">&#10230;</h1>
-                    <div className="w-28 h-20 bg-green-300 rounded-full"></div>
-                    <h1 className="text-4xl font-bold px-4">&#10230;</h1>
+                  <div className="bg-gray-100 shadow p-4 rounded-md flex items-center w-full">
+                    <div className="w-24 h-16 bg-white shadow rounded-full"></div>
+                    <h1 className="text-4xl px-4">&#10230;</h1>
+                    <div className="w-24 h-16 bg-white shadow rounded-full"></div>
+                    <h1 className="text-4xl px-4">&#10230;</h1>
+                    <div className="w-24 h-16 bg-green-300 shadow rounded-full"></div>
+                    <h1 className="text-4xl px-4">&#10230;</h1>
                   </div>
-                  <div className="bg-gray-100 py-2 my-2 rounded-md flex">
-                    <span className="text-gray-700 mx-4 mb-24 mt-4">
+                  <div className="bg-gray-100 shadow py-2 my-2 rounded-md flex">
+                    <span className="text-gray-700 mx-4 mb-20 mt-2">
                       Select Targets
                     </span>
-                    <select className="form-select block flex-1 ml-8 mr-40 mt-16 h-12 px-4 rounded outline-none shadow">
+                    <select className="form-select block flex-1 ml-8 mr-40 mt-12 h-12 px-4 rounded outline-none shadow">
                       <option
                         value=""
                         disabled
@@ -56,7 +56,7 @@ export default function Modal() {
                       <option>https://example5.com</option>
                     </select>
                   </div>
-                  <div className="bg-gray-100 rounded-md grid grid-cols-2 gaps-4 flex p-8">
+                  <div className="bg-gray-100 rounded-md shadow grid grid-cols-2 gaps-4 flex p-4">
                     <div className="flex items-start justify-start mx-20">
                       <div className="text-gray-700 font-semibold">
                         <p>Attack Type</p>
@@ -104,7 +104,7 @@ export default function Modal() {
                       </div>
                     </div>
                   </div>
-                  <div className="bg-gray-100 rounded-md my-2 grid grid-cols-3 p-4">
+                  <div className="bg-gray-100 rounded-md shadow my-2 grid grid-cols-3 p-4">
                     <div>
                       <div className="flex items-center jutify-between py-2">
                         <p className="mx-8">Field#1</p>
