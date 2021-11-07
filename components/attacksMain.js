@@ -59,7 +59,7 @@ export default function AttacksMain() {
   return (
     <div className="w-full h-full bg-gray-100 scroll-y-auto p-8">
       <div className="flex flex-col justify-around  w-full h-full">
-        <div className="flex flex-row justify-between items-start px-12 py-12 my-4 bg-white rounded shadow">
+        <div className="flex flex-row justify-between items-start px-12 py-12 my-4 bg-white rounded-lg shadow">
           <p className="rounded text-gray-700 flex-1">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry`s standard dummy text
@@ -87,7 +87,7 @@ export default function AttacksMain() {
             <Table1 data={People1} />
           </div>
         </div>
-        <div className="grid grid-cols-1 gap-4 mb-4">
+        <div className="grid grid-cols-1 gap-4 mt-4">
           <div className="w-full h-auto">
             <link
               rel="stylesheet"
