@@ -20,7 +20,12 @@ export default function Card(data) {
             <p className="text-gray-500 text-center px-4">
               rate{" "}
               <span className="font-bold text-gray-600">
-                {Math.floor((data.amount / data.pastAmount) * 100)}%
+                {Math.floor((data.amount / data.pastAmount) * 100)}%{" "}
+                {Math.floor(data.amount / data.pastAmount) * 100 > 1 ? (
+                  <span>&#8593;</span>
+                ) : (
+                  <span>&#8595;</span>
+                )}
               </span>
             </p>
           )}

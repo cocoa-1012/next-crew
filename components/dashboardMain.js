@@ -4,28 +4,28 @@ import Table1 from "./table1";
 const People1 = [
   {
     name: "Adam Cooper",
-    title: "Regional Paradigm Technician",
+    title: "Regional Paradigm",
     department: "Optimization",
     role: "Admin",
-    email: "jane.cooper@example.com",
+    email: "adam@crew.com",
     image:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
   },
   {
     name: "David Coferfield",
-    title: "Regional Paradigm Technician",
+    title: "Regional Paradigm",
     department: "Optimization",
     role: "Developer",
-    email: "jane.cooper@example.com",
+    email: "david@crew.com",
     image:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
   },
   {
     name: "Jane Cooper",
-    title: "Regional Paradigm Technician",
+    title: "Regional Paradigm",
     department: "Front end",
     role: "Designer",
-    email: "jane.cooper@example.com",
+    email: "jane@crew.com",
     image:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
   },
@@ -34,28 +34,28 @@ const People1 = [
 const People2 = [
   {
     name: "Jakub Cabala",
-    title: "Regional Paradigm Technician",
+    title: "Regional Paradigm",
     department: "Optimization",
     role: "Admin",
-    email: "jane.cooper@example.com",
+    email: "jakub@crew.com",
     image:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
   },
   {
     name: "Jane Cooper",
-    title: "Regional Paradigm Technician",
+    title: "Regional Paradigm",
     department: "Optimization",
     role: "Admin",
-    email: "jane.cooper@example.com",
+    email: "jane@crew.com",
     image:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
   },
   {
-    name: "Jane Cooper",
-    title: "Regional Paradigm Technician",
+    name: "Alex Cooper",
+    title: "Regional Paradigm",
     department: "Optimization",
     role: "Admin",
-    email: "jane.cooper@example.com",
+    email: "alex@crew.com",
     image:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
   },
@@ -153,7 +153,7 @@ export default function DashboardMain() {
             <Table1 data={People2} />
           </div>
         </div>
-        <div className="grid grid-cols-1 gap-4 mb-4">
+        <div className="grid grid-cols-1 gap-4 mb-12">
           <div className="w-full h-72">
             <Table1 data={People3} />
           </div>

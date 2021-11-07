@@ -5,7 +5,7 @@ import Sidebar from "../components/sidebar";
 export default function Attacks() {
   var title = "Attacks";
   return (
-    <div className="flex flex-col h-screen overflow-hidden">
+    <div className="flex flex-col h-screen ">
       <Header title={title} />
       <div className="flex flex-row flex-1">
         <Sidebar index={2} />
