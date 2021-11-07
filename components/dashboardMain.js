@@ -138,8 +138,7 @@ export default function DashboardMain() {
               amount={(AttackData.actived / AttackData.total) * 100 + "%"}
               pastAmount={
                 Math.floor(
-                  (AttackData.pastActived / AttackData.pastTotal) * 100,
-                  -1
+                  (AttackData.pastActived / AttackData.pastTotal) * 100
                 ) + "%"
               }
             />

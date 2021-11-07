@@ -22,9 +22,9 @@ export default function Card(data) {
               <span className="font-bold text-gray-600">
                 {Math.floor((data.amount / data.pastAmount) * 100)}%{" "}
                 {Math.floor(data.amount / data.pastAmount) * 100 > 1 ? (
-                  <span>&#8593;</span>
+                  <span className="text-green-500 font-bold">&#8593;</span>
                 ) : (
-                  <span>&#8595;</span>
+                  <span className="text-red-500">&#8595;</span>
                 )}
               </span>
             </p>
