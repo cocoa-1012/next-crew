@@ -31,13 +31,42 @@ export default function Modal() {
                 </div>
                 {/*body*/}
                 <div className="relative p-6 flex-auto">
-                  <div className="bg-gray-100 shadow p-4 rounded-md flex items-center w-full">
-                    <div className="w-24 h-16 bg-white shadow rounded-full"></div>
-                    <h1 className="text-4xl px-4">&#10230;</h1>
-                    <div className="w-24 h-16 bg-white shadow rounded-full"></div>
-                    <h1 className="text-4xl px-4">&#10230;</h1>
-                    <div className="w-24 h-16 bg-green-300 shadow rounded-full"></div>
-                    <h1 className="text-4xl px-4">&#10230;</h1>
+                  <div className=" bg-gray-100 p-2 shadow rounded-md">
+                    <div className="grid grid-cols-3 p-4 border-2 rounded-md flex items-center w-full">
+                      <div className="flex justify-between cursor-pointer relative">
+                        <div className="flex items-center h-full px-2">
+                          <div className="flex items-center justify-center bg-blue-600 text-white w-8 h-8 rounded-full">
+                            ✔
+                          </div>
+                          <p className="font-semibold ml-4">Job details</p>
+                        </div>
+                        <div>
+                          <p className="relative overflow-hidden inline-block h-full w-4 align-top after:absolute after:top-2/4 after:right-0 after:w-200 after:h-full after:box-border after:border after:border-r-2 after:origin-top-right after:rotate-45"></p>
+                        </div>
+                      </div>
+                      <div className="flex justify-between">
+                        <div className="flex items-center">
+                          <div className="flex items-center justify-center border-2 border-blue-600 text-blue-600 font-semibold w-8 h-8 rounded-full">
+                            02
+                          </div>
+                          <p className="font-semibold ml-4 text-blue-600">
+                            Application form
+                          </p>
+                        </div>
+                        <div></div>
+                      </div>
+                      <div className="flex justify-between">
+                        <div className="flex items-center">
+                          <div className="flex items-center justify-center border-2 border-gray-400 text-gray-400 font-semibold w-8 h-8 rounded-full">
+                            03
+                          </div>
+                          <p className="font-semibold ml-4 text-gray-500">
+                            Preview
+                          </p>
+                        </div>
+                        <div></div>
+                      </div>
+                    </div>
                   </div>
                   <div className="bg-gray-100 shadow py-2 my-2 rounded-md flex">
                     <span className="text-gray-700 mx-4 mb-20 mt-2">
