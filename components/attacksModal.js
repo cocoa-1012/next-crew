@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 export default function Modal() {
   const [showModal, setShowModal] = useState(false);
+  const [opt, setOpt] = useState(0);
   return (
     <>
       <button
@@ -57,52 +58,138 @@ export default function Modal() {
                     </select>
                   </div>
                   <div className="bg-gray-100 rounded-md shadow grid grid-cols-2 gaps-4 flex p-4">
-                    <div className="flex items-start justify-start mx-20">
-                      <div className="text-gray-700 font-semibold">
-                        <p>Attack Type</p>
-                        <p>Resource</p>
-                        <p>Service</p>
-                        <p>Network</p>
-                      </div>
-                      <div className="w-4 ml-2">
-                        <p>:</p>
-                        <p>:</p>
-                        <p>:</p>
-                        <p>:</p>
-                      </div>
-                      <div className="ml-4">
-                        <p>Cross-Site Scripting (XSS)</p>
-                        <p>Resource-1</p>
-                        <p>Service-3</p>
-                        <p>Network-2</p>
-                      </div>
+                    <div className="flex flex-col items-start justify-start mx-20 my-12">
+                      <label className="inline-flex items-center mb-6">
+                        <input
+                          type="radio"
+                          name="opt"
+                          value="1"
+                          onClick={() => setOpt(1)}
+                        />
+                        <span className="ml-2">State</span>
+                      </label>
+
+                      <label className="inline-flex items-center mb-6">
+                        <input
+                          type="radio"
+                          name="opt"
+                          value="2"
+                          onClick={() => setOpt(2)}
+                        />
+                        <span className="ml-2">Resource</span>
+                      </label>
+
+                      <label className="inline-flex items-center">
+                        <input
+                          type="radio"
+                          name="opt"
+                          value="3"
+                          onClick={() => setOpt(3)}
+                        />
+                        <span className="ml-2">Network</span>
+                      </label>
                     </div>
-                    <div className="bg-white rounded-md shadow p-8 mr-16">
-                      <span className="text-gray-700">Choose Options</span>
-                      <div className="mt-2">
-                        <div>
+                    {opt == 1 && (
+                      <div className="bg-white rounded-md shadow py-4 px-8 mr-16">
+                        <div className="py-2">
                           <label className="inline-flex items-center">
-                            <input type="checkbox" className="form-checkbox" />
-                            <span className="ml-2">
-                              Option 1{" "}
-                              <span className="text-gray-500">(recommend)</span>
-                            </span>
+                            <input type="radio" name="state" value="4" />
+                            <div className="flex flex-col ml-2">
+                              <span className="ml-2 font-bold">CPU Attack</span>
+                              <span className="ml-2 text-xs">
+                                App should be resilient to CPU Attack
+                              </span>
+                            </div>
                           </label>
                         </div>
-                        <div>
+                        <div className="py-2">
                           <label className="inline-flex items-center">
-                            <input type="checkbox" className="form-checkbox" />
-                            <span className="ml-2">Option 2</span>
+                            <input type="radio" name="state" value="5" />
+                            <div className="flex flex-col ml-2">
+                              <span className="ml-2 font-bold">
+                                Memory Stress
+                              </span>
+                              <span className="ml-2 text-xs">
+                                Virtual Memory Chaos
+                              </span>
+                            </div>
                           </label>
                         </div>
-                        <div>
+                        <div className="py-2">
                           <label className="inline-flex items-center">
-                            <input type="checkbox" className="form-checkbox" />
-                            <span className="ml-2">Option 3</span>
+                            <input type="radio" name="state" value="6" />
+                            <div className="flex flex-col ml-2">
+                              <span className="ml-2 font-bold">
+                                I/O Stress Attack
+                              </span>
+                              <span className="ml-2 text-xs">
+                                IO device Chaos
+                              </span>
+                            </div>
                           </label>
                         </div>
                       </div>
-                    </div>
+                    )}
+                    {opt == 2 && (
+                      <div className="bg-white rounded-md shadow p-8 mr-16">
+                        <div className="py-2">
+                          <label className="inline-flex items-center">
+                            <input type="radio" name="state" value="4" />
+                            <div className="flex flex-col ml-2">
+                              <span className="ml-2 font-bold">
+                                Process Killer
+                              </span>
+                              <span className="ml-2 text-xs">
+                                App should be resilient to process killer
+                              </span>
+                            </div>
+                          </label>
+                        </div>
+                        <div className="py-2">
+                          <label className="inline-flex items-center">
+                            <input type="radio" name="state" value="5" />
+                            <div className="flex flex-col ml-2">
+                              <span className="ml-2 font-bold">
+                                Rowhammer Attack
+                              </span>
+                              <span className="ml-2 text-xs">
+                                rowhammer memory
+                              </span>
+                            </div>
+                          </label>
+                        </div>
+                      </div>
+                    )}
+                    {opt == 3 && (
+                      <div className="bg-white rounded-md shadow p-8 mr-16">
+                        <div className="py-2">
+                          <label className="inline-flex items-center">
+                            <input type="radio" name="state" value="4" />
+                            <div className="flex flex-col ml-2">
+                              <span className="ml-2 font-bold">
+                                Network Killer
+                              </span>
+                              <span className="ml-2 text-xs">
+                                App should be resilient to network killer
+                              </span>
+                            </div>
+                          </label>
+                        </div>
+                        <div className="py-2">
+                          <label className="inline-flex items-center">
+                            <input type="radio" name="state" value="5" />
+                            <div className="flex flex-col ml-2">
+                              <span className="ml-2 font-bold">
+                                network Attack
+                              </span>
+                              <span className="ml-2 text-xs">
+                                network memory
+                              </span>
+                            </div>
+                          </label>
+                        </div>
+                      </div>
+                    )}
                   </div>
                   <div className="bg-gray-100 rounded-md shadow my-2 grid grid-cols-3 p-4">
                     <div>
