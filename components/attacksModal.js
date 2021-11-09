@@ -1,8 +1,10 @@
+import Image from "next/image";
 import React, { useState } from "react";
 
 export default function Modal() {
   const [showModal, setShowModal] = useState(false);
   const [opt, setOpt] = useState(0);
+  const [topState, setTopState] = useState(0);
   return (
     <>
       <button
@@ -31,39 +33,112 @@ export default function Modal() {
                 </div>
                 {/*body*/}
                 <div className="relative p-6 flex-auto">
-                  <div className=" bg-gray-100 p-2 shadow rounded-md">
-                    <div className="grid grid-cols-3 p-4 border-2 rounded-md flex items-center w-full">
-                      <div className="flex justify-between cursor-pointer relative">
-                        <div className="flex items-center h-full px-2">
-                          <div className="flex items-center justify-center bg-blue-600 text-white w-8 h-8 rounded-full">
-                            ✔
+                  <div className=" bg-white p-2 shadow rounded-md">
+                    <div className="grid grid-cols-3 px-4 py-0 border-2 border-gray-200 rounded-md flex items-center w-full">
+                      <div
+                        className="flex justify-between items-center cursor-pointer mr-4"
+                        onClick={() => setTopState(1)}
+                      >
+                        {topState == 0 && (
+                          <div className="flex items-center px-2">
+                            <div className="flex items-center justify-center border-2 border-blue-600 text-blue-600 font-semibold w-8 h-8 rounded-full">
+                              01
+                            </div>
+                            <p className="font-semibold ml-4 text-blue-600">
+                              Job details
+                            </p>
                           </div>
-                          <p className="font-semibold ml-4">Job details</p>
-                        </div>
-                        <div>
-                          <p className="relative overflow-hidden inline-block h-full w-4 align-top after:absolute after:top-2/4 after:right-0 after:w-200 after:h-full after:box-border after:border after:border-r-2 after:origin-top-right after:rotate-45"></p>
-                        </div>
+                        )}
+                        {topState !== 0 && (
+                          <div className="flex items-center h-full px-2 py-0">
+                            <div className="flex items-center justify-center bg-blue-600 text-white w-8 h-8 rounded-full">
+                              ✔
+                            </div>
+                            <p className="font-semibold ml-4">Job details</p>
+                          </div>
+                        )}
+                        <Image
+                          src={"/step-arrow.png"}
+                          width="20"
+                          height="70"
+                          alt="logo"
+                          className="w-48 sm:w-56 md:w-64 cursor-pointer"
+                        />
                       </div>
-                      <div className="flex justify-between">
-                        <div className="flex items-center">
-                          <div className="flex items-center justify-center border-2 border-blue-600 text-blue-600 font-semibold w-8 h-8 rounded-full">
-                            02
+                      <div
+                        className="flex justify-between items-center cursor-pointer mr-4"
+                        onClick={() => setTopState(2)}
+                      >
+                        {topState == 0 && (
+                          <div className="flex items-center px-2">
+                            <div className="flex items-center justify-center border-2 border-gray-400 text-gray-400 font-semibold w-8 h-8 rounded-full">
+                              02
+                            </div>
+                            <p className="font-semibold ml-4 text-gray-500">
+                              Application form
+                            </p>
                           </div>
-                          <p className="font-semibold ml-4 text-blue-600">
-                            Application form
-                          </p>
-                        </div>
-                        <div></div>
+                        )}
+                        {topState == 1 && (
+                          <div className="flex items-center px-2">
+                            <div className="flex items-center justify-center border-2 border-blue-600 text-blue-600 font-semibold w-8 h-8 rounded-full">
+                              02
+                            </div>
+                            <p className="font-semibold ml-4 text-blue-600">
+                              Application form
+                            </p>
+                          </div>
+                        )}
+                        {(topState == 2 || topState == 3) && (
+                          <div className="flex items-center h-full px-2">
+                            <div className="flex items-center justify-center bg-blue-600 text-white w-8 h-8 rounded-full">
+                              ✔
+                            </div>
+                            <p className="font-semibold ml-4">
+                              Application form
+                            </p>
+                          </div>
+                        )}
+                        <Image
+                          src={"/step-arrow.png"}
+                          width="20"
+                          height="70"
+                          alt="logo"
+                          className="w-48 sm:w-56 md:w-64 cursor-pointer"
+                        />
                       </div>
-                      <div className="flex justify-between">
-                        <div className="flex items-center">
-                          <div className="flex items-center justify-center border-2 border-gray-400 text-gray-400 font-semibold w-8 h-8 rounded-full">
-                            03
+                      <div
+                        className="flex justify-between items-center cursor-pointer mr-4"
+                        onClick={() => setTopState(3)}
+                      >
+                        {topState == 2 && (
+                          <div className="flex items-center px-2">
+                            <div className="flex items-center justify-center border-2 border-blue-600 text-blue-600 font-semibold w-8 h-8 rounded-full">
+                              03
+                            </div>
+                            <p className="font-semibold ml-4 text-blue-600">
+                              Preview
+                            </p>
                           </div>
-                          <p className="font-semibold ml-4 text-gray-500">
-                            Preview
-                          </p>
-                        </div>
+                        )}
+                        {(topState == 1 || topState == 0) && (
+                          <div className="flex items-center px-2">
+                            <div className="flex items-center justify-center border-2 border-gray-400 text-gray-400 font-semibold w-8 h-8 rounded-full">
+                              03
+                            </div>
+                            <p className="font-semibold ml-4 text-gray-500">
+                              Preview
+                            </p>
+                          </div>
+                        )}
+                        {topState == 3 && (
+                          <div className="flex items-center h-full px-2">
+                            <div className="flex items-center justify-center bg-blue-600 text-white w-8 h-8 rounded-full">
+                              ✔
+                            </div>
+                            <p className="font-semibold ml-4">Preview</p>
+                          </div>
+                        )}
                         <div></div>
                       </div>
                     </div>
