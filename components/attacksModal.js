@@ -45,7 +45,7 @@ export default function Modal() {
                               01
                             </div>
                             <p className="font-semibold ml-4 text-blue-600">
-                              Job details
+                              Select Target
                             </p>
                           </div>
                         )}
@@ -54,7 +54,7 @@ export default function Modal() {
                             <div className="flex items-center justify-center bg-blue-600 text-white w-8 h-8 rounded-full">
                               ✔
                             </div>
-                            <p className="font-semibold ml-4">Job details</p>
+                            <p className="font-semibold ml-4">Select Target</p>
                           </div>
                         )}
                         <Image
@@ -75,7 +75,7 @@ export default function Modal() {
                               02
                             </div>
                             <p className="font-semibold ml-4 text-gray-500">
-                              Application form
+                              Select attack category & type
                             </p>
                           </div>
                         )}
@@ -85,7 +85,7 @@ export default function Modal() {
                               02
                             </div>
                             <p className="font-semibold ml-4 text-blue-600">
-                              Application form
+                              Select attack category & type
                             </p>
                           </div>
                         )}
@@ -95,7 +95,7 @@ export default function Modal() {
                               ✔
                             </div>
                             <p className="font-semibold ml-4">
-                              Application form
+                              Select attack category & type
                             </p>
                           </div>
                         )}
@@ -117,7 +117,7 @@ export default function Modal() {
                               03
                             </div>
                             <p className="font-semibold ml-4 text-blue-600">
-                              Preview
+                              Completing the required params
                             </p>
                           </div>
                         )}
@@ -127,7 +127,7 @@ export default function Modal() {
                               03
                             </div>
                             <p className="font-semibold ml-4 text-gray-500">
-                              Preview
+                              Completing the required params
                             </p>
                           </div>
                         )}
@@ -136,7 +136,9 @@ export default function Modal() {
                             <div className="flex items-center justify-center bg-blue-600 text-white w-8 h-8 rounded-full">
                               ✔
                             </div>
-                            <p className="font-semibold ml-4">Preview</p>
+                            <p className="font-semibold ml-4">
+                              Completing the required params
+                            </p>
                           </div>
                         )}
                         <div></div>
