@@ -1,10 +1,31 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function Modal() {
   const [showModal, setShowModal] = useState(false);
   const [opt, setOpt] = useState(0);
   const [topState, setTopState] = useState(0);
+  const [fieldVal1, setFieldVal1] = useState("");
+  const [fieldVal2, setFieldVal2] = useState("");
+  const [fieldVal0, setFieldVal0] = useState("");
+  const secondStep = () => {
+    if (topState == 1 || topState == 3) {
+      setTopState(2);
+      setFieldVal0("");
+      setFieldVal1("");
+      setFieldVal2("");
+    }
+  };
+
+  useEffect(() => {
+    if (
+      topState == 2 &&
+      fieldVal1 !== "" &&
+      fieldVal2 !== "" &&
+      fieldVal0 !== ""
+    )
+      setTopState(3);
+  }, [topState, fieldVal1, fieldVal2, fieldVal0]);
   return (
     <>
       <button
@@ -24,7 +45,10 @@ export default function Modal() {
                   <h3 className="text-3xl font-semibold">New attack</h3>
                   <button
                     className="p-1 ml-auto bg-transparent border-0 text-black opacity-50 float-right text-3xl leading-none font-semibold outline-none focus:outline-none hover:opacity-100"
-                    onClick={() => setShowModal(false)}
+                    onClick={() => {
+                      setShowModal(false);
+                      setTopState(0);
+                    }}
                   >
                     <span className="flex items-center text-red h-6 w-6 text-3xl block outline-none focus:outline-none">
                       &times;
@@ -37,7 +61,7 @@ export default function Modal() {
                     <div className="grid grid-cols-3 px-4 py-0 border-2 border-gray-200 rounded-md flex items-center w-full">
                       <div
                         className="flex justify-between items-center cursor-pointer mr-4"
-                        onClick={() => setTopState(1)}
+                        // onClick={() => setTopState(1)}
                       >
                         {topState == 0 && (
                           <div className="flex items-center px-2">
@@ -67,7 +91,7 @@ export default function Modal() {
                       </div>
                       <div
                         className="flex justify-between items-center cursor-pointer mr-4"
-                        onClick={() => setTopState(2)}
+                        // onClick={() => setTopState(2)}
                       >
                         {topState == 0 && (
                           <div className="flex items-center px-2">
@@ -109,7 +133,7 @@ export default function Modal() {
                       </div>
                       <div
                         className="flex justify-between items-center cursor-pointer mr-4"
-                        onClick={() => setTopState(3)}
+                        // onClick={() => setTopState(3)}
                       >
                         {topState == 2 && (
                           <div className="flex items-center px-2">
@@ -149,7 +173,10 @@ export default function Modal() {
                     <span className="text-gray-700 mx-4 mb-20 mt-2">
                       Select Targets
                     </span>
-                    <select className="form-select block flex-1 ml-8 mr-40 mt-12 h-12 px-4 rounded outline-none shadow">
+                    <select
+                      className="form-select block flex-1 ml-8 mr-40 mt-12 h-12 px-4 rounded outline-none shadow"
+                      onChange={() => setTopState(1)}
+                    >
                       <option
                         value=""
                         disabled
@@ -199,7 +226,12 @@ export default function Modal() {
                       <div className="bg-white rounded-md shadow py-4 px-8 mr-16">
                         <div className="py-2">
                           <label className="inline-flex items-center">
-                            <input type="radio" name="state" value="4" />
+                            <input
+                              type="radio"
+                              name="state"
+                              value="4"
+                              onClick={() => secondStep()}
+                            />
                             <div className="flex flex-col ml-2">
                               <span className="ml-2 font-bold">CPU Attack</span>
                               <span className="ml-2 text-xs">
@@ -210,7 +242,12 @@ export default function Modal() {
                         </div>
                         <div className="py-2">
                           <label className="inline-flex items-center">
-                            <input type="radio" name="state" value="5" />
+                            <input
+                              type="radio"
+                              name="state"
+                              value="5"
+                              onClick={() => secondStep()}
+                            />
                             <div className="flex flex-col ml-2">
                               <span className="ml-2 font-bold">
                                 Memory Stress
@@ -223,7 +260,12 @@ export default function Modal() {
                         </div>
                         <div className="py-2">
                           <label className="inline-flex items-center">
-                            <input type="radio" name="state" value="6" />
+                            <input
+                              type="radio"
+                              name="state"
+                              value="6"
+                              onClick={() => secondStep()}
+                            />
                             <div className="flex flex-col ml-2">
                               <span className="ml-2 font-bold">
                                 I/O Stress Attack
@@ -240,7 +282,12 @@ export default function Modal() {
                       <div className="bg-white rounded-md shadow p-8 mr-16">
                         <div className="py-2">
                           <label className="inline-flex items-center">
-                            <input type="radio" name="state" value="4" />
+                            <input
+                              type="radio"
+                              name="state"
+                              value="4"
+                              onClick={() => secondStep()}
+                            />
                             <div className="flex flex-col ml-2">
                               <span className="ml-2 font-bold">
                                 Process Killer
@@ -253,7 +300,12 @@ export default function Modal() {
                         </div>
                         <div className="py-2">
                           <label className="inline-flex items-center">
-                            <input type="radio" name="state" value="5" />
+                            <input
+                              type="radio"
+                              name="state"
+                              value="5"
+                              onClick={() => secondStep()}
+                            />
                             <div className="flex flex-col ml-2">
                               <span className="ml-2 font-bold">
                                 Rowhammer Attack
@@ -270,7 +322,12 @@ export default function Modal() {
                       <div className="bg-white rounded-md shadow p-8 mr-16">
                         <div className="py-2">
                           <label className="inline-flex items-center">
-                            <input type="radio" name="state" value="4" />
+                            <input
+                              type="radio"
+                              name="state"
+                              value="4"
+                              onClick={() => secondStep()}
+                            />
                             <div className="flex flex-col ml-2">
                               <span className="ml-2 font-bold">
                                 Network Killer
@@ -283,7 +340,12 @@ export default function Modal() {
                         </div>
                         <div className="py-2">
                           <label className="inline-flex items-center">
-                            <input type="radio" name="state" value="5" />
+                            <input
+                              type="radio"
+                              name="state"
+                              value="5"
+                              onClick={() => secondStep()}
+                            />
                             <div className="flex flex-col ml-2">
                               <span className="ml-2 font-bold">
                                 network Attack
@@ -303,21 +365,27 @@ export default function Modal() {
                         <p className="mx-8">Field#1</p>
                         <input
                           type="text"
+                          value={fieldVal0}
                           className="h-8 px-4 outline-none rounded shadow"
+                          onChange={(e) => setFieldVal0(e.target.value)}
                         />
                       </div>
                       <div className="flex items-center jutify-between py-2">
                         <p className="mx-8">Field#2</p>
                         <input
                           type="text"
+                          value={fieldVal1}
                           className="h-8 px-4 outline-none rounded shadow"
+                          onChange={(e) => setFieldVal1(e.target.value)}
                         />
                       </div>
                       <div className="flex items-center jutify-between py-2">
                         <p className="mx-8">Field#3</p>
                         <input
                           type="text"
+                          value={fieldVal2}
                           className="h-8 px-4 outline-none rounded shadow"
+                          onChange={(e) => setFieldVal2(e.target.value)}
                         />
                       </div>
                     </div>
@@ -330,14 +398,20 @@ export default function Modal() {
                   <button
                     className="text-white rounded-lg bg-blue-500 font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 hover:bg-blue-700 mr-8"
                     type="button"
-                    onClick={() => setShowModal(false)}
+                    onClick={() => {
+                      setShowModal(false);
+                      setTopState(0);
+                    }}
                   >
                     Submit
                   </button>
                   <button
                     className="text-white rounded-lg bg-gray-500 font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 hover:bg-gray-700"
                     type="button"
-                    onClick={() => setShowModal(false)}
+                    onClick={() => {
+                      setShowModal(false);
+                      setTopState(0);
+                    }}
                   >
                     Cancel
                   </button>

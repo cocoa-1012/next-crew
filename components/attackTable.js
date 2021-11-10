@@ -33,12 +33,12 @@ export default function AttackTable(data) {
                   >
                     Status
                   </th>
-                  <th
+                  {/* <th
                     scope="col"
                     className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                   >
                     Creation Date
-                  </th>
+                  </th> */}
                   <th scope="col" className="relative px-6 py-3">
                     <span className="sr-only">View</span>
                   </th>
@@ -75,9 +75,9 @@ export default function AttackTable(data) {
                         </span>
                       )}
                     </td>
-                    <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500">
+                    {/* <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500">
                       {person.creationDate}
-                    </td>
+                    </td> */}
                     <td className="px-12 py-4 whitespace-nowrap text-right text-sm font-medium">
                       <a
                         href="#"
