@@ -1,5 +1,7 @@
+import axios from "axios";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import { AdminTeamID, mainAPIURL } from "../config/api";
 
 export default function Modal() {
   const [showModal, setShowModal] = useState(false);
@@ -16,7 +18,39 @@ export default function Modal() {
       setFieldVal2("");
     }
   };
+  const [targetData, setTargetData] = useState([]);
+  const [targetLists, setTargetLists] = useState([]);
+  const sendGetRequest = async () => {
+    try {
+      const resp = await axios.get(
+        mainAPIURL + "/api/v1/teams/" + AdminTeamID + "/targets/"
+      );
+      setTargetData(resp.data);
+      targetData.results.map((item) => tempTargetData.push(item.name));
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
+  var tempTargetData = [];
+  // useEffect(() => {
+  //   console.log("current List", targetData);
+  //   if (targetData.length == 0) {
+  //     sendGetRequest();
+  //   }
+  // });
+  useEffect(() => {
+    console.log("targetLists", targetLists);
+    if (targetLists.length == 0) {
+      if (targetData.length == 0) {
+        sendGetRequest();
+      } else {
+        targetData.results.map((item) => tempTargetData.push(item.name));
+        console.log("TargetData.results", targetData.results, tempTargetData);
+        setTargetLists(tempTargetData);
+      }
+    }
+  });
   useEffect(() => {
     if (
       topState == 2 &&
@@ -183,11 +217,10 @@ export default function Modal() {
                         selected
                         className="hidden"
                       ></option>
-                      <option>https://example1.com</option>
-                      <option>https://example2.com</option>
-                      <option>https://example3.com</option>
-                      <option>https://example4.com</option>
-                      <option>https://example5.com</option>
+                      {targetLists.length !== 0 &&
+                        targetLists.map((targetList, index) => (
+                          <option key={index}>{targetList}</option>
+                        ))}
                     </select>
                   </div>
                   <div className="bg-gray-100 rounded-md shadow grid grid-cols-2 gaps-4 flex p-4">
@@ -223,6 +256,47 @@ export default function Modal() {
                       </label>
                     </div>
                     {opt == 1 && (
+                      <div className="bg-white rounded-md shadow p-8 mr-16">
+                        <div className="py-2">
+                          <label className="inline-flex items-center">
+                            <input
+                              type="radio"
+                              name="state"
+                              value="4"
+                              onClick={() => secondStep()}
+                            />
+                            <div className="flex flex-col ml-2">
+                              <span className="ml-2 font-bold">
+                                Process Killer
+                              </span>
+                              <span className="ml-2 text-xs">
+                                App should be resilient to process killer
+                              </span>
+                            </div>
+                          </label>
+                        </div>
+                        <div className="py-2">
+                          <label className="inline-flex items-center">
+                            <input
+                              type="radio"
+                              name="state"
+                              value="5"
+                              onClick={() => secondStep()}
+                            />
+                            <div className="flex flex-col ml-2">
+                              <span className="ml-2 font-bold">
+                                Rowhammer Attack
+                              </span>
+                              <span className="ml-2 text-xs">
+                                try to force memory corruption using the
+                                rowhammer memory
+                              </span>
+                            </div>
+                          </label>
+                        </div>
+                      </div>
+                    )}
+                    {opt == 2 && (
                       <div className="bg-white rounded-md shadow py-4 px-8 mr-16">
                         <div className="py-2">
                           <label className="inline-flex items-center">
@@ -267,51 +341,9 @@ export default function Modal() {
                               onClick={() => secondStep()}
                             />
                             <div className="flex flex-col ml-2">
-                              <span className="ml-2 font-bold">
+                              <span className="ml-2 font-bold">I/O Attack</span>
+                              <span className="ml-2 text-xs">
                                 I/O Stress Attack
-                              </span>
-                              <span className="ml-2 text-xs">
-                                IO device Chaos
-                              </span>
-                            </div>
-                          </label>
-                        </div>
-                      </div>
-                    )}
-                    {opt == 2 && (
-                      <div className="bg-white rounded-md shadow p-8 mr-16">
-                        <div className="py-2">
-                          <label className="inline-flex items-center">
-                            <input
-                              type="radio"
-                              name="state"
-                              value="4"
-                              onClick={() => secondStep()}
-                            />
-                            <div className="flex flex-col ml-2">
-                              <span className="ml-2 font-bold">
-                                Process Killer
-                              </span>
-                              <span className="ml-2 text-xs">
-                                App should be resilient to process killer
-                              </span>
-                            </div>
-                          </label>
-                        </div>
-                        <div className="py-2">
-                          <label className="inline-flex items-center">
-                            <input
-                              type="radio"
-                              name="state"
-                              value="5"
-                              onClick={() => secondStep()}
-                            />
-                            <div className="flex flex-col ml-2">
-                              <span className="ml-2 font-bold">
-                                Rowhammer Attack
-                              </span>
-                              <span className="ml-2 text-xs">
-                                rowhammer memory
                               </span>
                             </div>
                           </label>
@@ -330,28 +362,10 @@ export default function Modal() {
                             />
                             <div className="flex flex-col ml-2">
                               <span className="ml-2 font-bold">
-                                Network Killer
+                                Network stress test
                               </span>
                               <span className="ml-2 text-xs">
-                                App should be resilient to network killer
-                              </span>
-                            </div>
-                          </label>
-                        </div>
-                        <div className="py-2">
-                          <label className="inline-flex items-center">
-                            <input
-                              type="radio"
-                              name="state"
-                              value="5"
-                              onClick={() => secondStep()}
-                            />
-                            <div className="flex flex-col ml-2">
-                              <span className="ml-2 font-bold">
-                                network Attack
-                              </span>
-                              <span className="ml-2 text-xs">
-                                network memory
+                                Mixed network chaos
                               </span>
                             </div>
                           </label>
