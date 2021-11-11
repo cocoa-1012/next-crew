@@ -10,7 +10,7 @@ export default function Login() {
       password: "",
     },
   });
-  const submitUser = (e) => {
+  const submitUser = () => {
     if (formData.user.username == "") {
       alert("please fill your name");
     } else if (formData.user.password == "") {

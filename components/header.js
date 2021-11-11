@@ -3,11 +3,18 @@ import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 import Image from "next/image";
 import Link from "next/link";
+import Router from "next/router";
 import { Fragment } from "react";
 
 export default function Header(data) {
   const classNames = (...classes) => {
     return classes.filter(Boolean).join(" ");
+  };
+  const logOut = () => {
+    window.localStorage.removeItem("userToken");
+    Router.push({
+      pathname: "/",
+    });
   };
 
   return (
@@ -77,17 +84,17 @@ export default function Header(data) {
             <div className="py-1">
               <Menu.Item>
                 {({ active }) => (
-                  <Link href="/">
-                    <a
-                      href="#"
-                      className={classNames(
-                        active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                        "block px-4 py-2 text-sm"
-                      )}
-                    >
-                      Log Out
-                    </a>
-                  </Link>
+                  // <Link href="/">
+                  <p
+                    className={classNames(
+                      active ? "bg-gray-100 text-gray-900" : "text-gray-700",
+                      "block px-4 py-2 text-sm cursor-pointer"
+                    )}
+                    onClick={logOut}
+                  >
+                    Log Out
+                  </p>
+                  // </Link>
                 )}
               </Menu.Item>
             </div>
