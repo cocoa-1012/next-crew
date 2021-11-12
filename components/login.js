@@ -1,6 +1,8 @@
 /* eslint-disable @next/next/link-passhref */
-import Link from "next/link";
+import axios from "axios";
+import Router from "next/router";
 import React, { useState } from "react";
+import { mainAPIURL } from "../config/api";
 export default function Login() {
   const [formData, setFormData] = useState({
     user: {
@@ -8,7 +10,33 @@ export default function Login() {
       password: "",
     },
   });
-
+  const submitUser = () => {
+    if (formData.user.username == "") {
+      alert("please fill your name");
+    } else if (formData.user.password == "") {
+      alert("please fill your password");
+    } else {
+      axios
+        .post(mainAPIURL + "/api-token-auth", {
+          username: formData.user.username,
+          password: formData.user.password,
+        })
+        .then(
+          (response) => {
+            window.localStorage.setItem(
+              "userToken",
+              JSON.stringify(response.data.token)
+            );
+            Router.push({
+              pathname: "/dashboard",
+            });
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
+    }
+  };
   const handleChange = (e) => {
     setFormData({
       user: {
@@ -30,7 +58,7 @@ export default function Login() {
               Login to your account
             </h1>
           </div>
-          <form>
+          <div>
             <label className="text-left">Username:</label>
             <input
               name="username"
@@ -54,18 +82,18 @@ export default function Login() {
               }
             />
             <div className="flex items-center mt-3 justify-center">
-              <Link href="/dashboard">
-                <button
-                  className={
-                    "bg-blue-700 hover:bg-blue-500 py-2 px-4 text-md text-white rounded border border-blue focus:outline-none focus:border-black"
-                  }
-                  value="Login"
-                >
-                  Login
-                </button>
-              </Link>
+              <button
+                id="submit"
+                className={
+                  "bg-blue-700 hover:bg-blue-500 py-2 px-4 text-md text-white rounded border border-blue focus:outline-none focus:border-black"
+                }
+                value="Login"
+                onClick={submitUser}
+              >
+                Login
+              </button>
             </div>
-          </form>
+          </div>
           <div className="flex items-center mt-3 justify-center">
             <button className={"justify-center text-blue-500 hover:underline"}>
               Need to register? Sign up for free

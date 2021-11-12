@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-
+import AttacksViewModal from "./attacksViewModal";
 export default function AttackTable(data) {
   return (
     <div className="flex flex-col bg">
@@ -11,80 +11,43 @@ export default function AttackTable(data) {
                 <tr>
                   <th
                     scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    className="px-12 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                   >
-                    Attack name
+                    Name
                   </th>
                   <th
                     scope="col"
-                    className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    className="px-12 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                   >
-                    Attack type
+                    Description
                   </th>
                   <th
                     scope="col"
-                    className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    className="px-12 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
                   >
-                    Params
-                  </th>
-                  <th
-                    scope="col"
-                    className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                  >
-                    Status
-                  </th>
-                  {/* <th
-                    scope="col"
-                    className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                  >
-                    Creation Date
-                  </th> */}
-                  <th scope="col" className="relative px-6 py-3">
-                    <span className="sr-only">View</span>
+                    Action
                   </th>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
-                {data.data.map((person) => (
-                  <tr key={person.name}>
+                {data.data.map((item, index) => (
+                  <tr key={item.name}>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="flex items-center">
                         <div className="ml-4">
                           <div className="text-sm font-medium text-gray-900">
-                            {person.name}
+                            {item.name}
                           </div>
                         </div>
                       </div>
                     </td>
                     <td className="px-4 py-4 whitespace-nowrap">
-                      <div className="text-sm text-gray-900">{person.type}</div>
-                    </td>
-                    <td className="px-4 py-4 whitespace-nowrap">
-                      <div className="text-sm text-gray-900">
-                        {person.params}
+                      <div className="text-sm text-gray-900 max-w-screen-sm overflow-x-hidden">
+                        {item.description}
                       </div>
                     </td>
-                    <td className="px-4 py-4 whitespace-nowrap">
-                      {person.status === "ON" ? (
-                        <span className="px-2 inline-flex text-xs leading-5 font-semibold bg-green-100 rounded-full text-green-800">
-                          {person.status}
-                        </span>
-                      ) : (
-                        <span className="px-2 inline-flex text-xs leading-5 font-semibold bg-gray-100 rounded-full text-gray-500">
-                          {person.status}
-                        </span>
-                      )}
-                    </td>
-                    {/* <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500">
-                      {person.creationDate}
-                    </td> */}
                     <td className="px-12 py-4 whitespace-nowrap text-right text-sm font-medium">
-                      <a
-                        href="#"
-                        className="text-indigo-600 hover:text-indigo-900"
-                      >
-                        View
-                      </a>
+                      <AttacksViewModal item={item} />
                     </td>
                   </tr>
                 ))}
