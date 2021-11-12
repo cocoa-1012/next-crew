@@ -127,7 +127,9 @@ export default function AttacksViewModal(data) {
                           <p className="mx-4">report</p>
                           <p className="p-0">:</p>
                         </div>
-                        <p className="py-2 mx-4">{data.item.report}</p>
+                        <p className="py-2 mx-4 whitespace-pre-wrap text-left">
+                          {data.item.report}
+                        </p>
                       </div>
                       <div className="flex hover:bg-gray-200">
                         <div className="flex flex-row justify-between items-center py-2 w-28">
