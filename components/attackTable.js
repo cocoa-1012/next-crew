@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import AttacksViewModal from "./attacksViewModal";
 export default function AttackTable(data) {
-  console.log("Child", data.data[0].params);
   return (
     <div className="flex flex-col bg">
       <div className="-my-2 overflow-hidden sm:-mx-6 lg:-mx-8">

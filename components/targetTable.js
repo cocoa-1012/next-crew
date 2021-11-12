@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import TargetViewModal from "./targetViewModal";
 export default function AttackTable(data) {
-  console.log("targetTable Data:", data.data);
   var targetData = data.data.results;
   return (
     <div className="flex flex-col bg">

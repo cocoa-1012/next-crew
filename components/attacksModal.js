@@ -34,13 +34,11 @@ export default function Modal() {
 
   var tempTargetData = [];
   useEffect(() => {
-    console.log("targetLists", targetLists);
     if (targetLists.length == 0) {
       if (targetData.length == 0) {
         sendGetRequest();
       } else {
         targetData.results.map((item) => tempTargetData.push(item.name));
-        console.log("TargetData.results", targetData.results, tempTargetData);
         setTargetLists(tempTargetData);
       }
     }

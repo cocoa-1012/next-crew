@@ -19,8 +19,6 @@ export default function AttacksMain() {
   };
 
   useEffect(() => {
-    console.log("current List", attackList);
-
     if (attackList.length == 0) {
       sendGetRequest();
     }
