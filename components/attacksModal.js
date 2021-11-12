@@ -33,12 +33,6 @@ export default function Modal() {
   };
 
   var tempTargetData = [];
-  // useEffect(() => {
-  //   console.log("current List", targetData);
-  //   if (targetData.length == 0) {
-  //     sendGetRequest();
-  //   }
-  // });
   useEffect(() => {
     console.log("targetLists", targetLists);
     if (targetLists.length == 0) {
@@ -52,14 +46,18 @@ export default function Modal() {
     }
   });
   useEffect(() => {
-    if (
-      topState == 2 &&
-      fieldVal1 !== "" &&
-      fieldVal2 !== "" &&
-      fieldVal0 !== ""
-    )
-      setTopState(3);
-  }, [topState, fieldVal1, fieldVal2, fieldVal0]);
+    if (topState == 2)
+      if (
+        opt == 2 &&
+        fieldVal1 !== "" &&
+        fieldVal2 !== "" &&
+        fieldVal0 !== ""
+      ) {
+        setTopState(3);
+      } else if (opt !== 2 && fieldVal1 !== "" && fieldVal0 !== "") {
+        setTopState(3);
+      }
+  }, [opt, topState, fieldVal1, fieldVal2, fieldVal0]);
   return (
     <>
       <button
@@ -72,9 +70,7 @@ export default function Modal() {
         <>
           <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed mt-28 inset-0 z-50 outline-none focus:outline-none">
             <div className="relative w-full mx-full ml-48 mr-8">
-              {/*content*/}
               <div className="bg-gray-200 border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                {/*header*/}
                 <div className="flex items-start justify-between px-8 py-2 border-b border-solid border-blueGray-400 rounded-t">
                   <h3 className="text-3xl font-semibold">New attack</h3>
                   <button
@@ -89,14 +85,10 @@ export default function Modal() {
                     </span>
                   </button>
                 </div>
-                {/*body*/}
                 <div className="relative p-6 flex-auto">
                   <div className=" bg-white p-2 shadow rounded-md">
                     <div className="grid grid-cols-3 px-4 py-0 border-2 border-gray-200 rounded-md flex items-center w-full">
-                      <div
-                        className="flex justify-between items-center cursor-pointer mr-4"
-                        // onClick={() => setTopState(1)}
-                      >
+                      <div className="flex justify-between items-center cursor-pointer mr-4">
                         {topState == 0 && (
                           <div className="flex items-center px-2">
                             <div className="flex items-center justify-center border-2 border-blue-600 text-blue-600 font-semibold w-8 h-8 rounded-full">
@@ -123,10 +115,7 @@ export default function Modal() {
                           className="w-48 sm:w-56 md:w-64 cursor-pointer"
                         />
                       </div>
-                      <div
-                        className="flex justify-between items-center cursor-pointer mr-4"
-                        // onClick={() => setTopState(2)}
-                      >
+                      <div className="flex justify-between items-center cursor-pointer mr-4">
                         {topState == 0 && (
                           <div className="flex items-center px-2">
                             <div className="flex items-center justify-center border-2 border-gray-400 text-gray-400 font-semibold w-8 h-8 rounded-full">
@@ -165,10 +154,7 @@ export default function Modal() {
                           className="w-48 sm:w-56 md:w-64 cursor-pointer"
                         />
                       </div>
-                      <div
-                        className="flex justify-between items-center cursor-pointer mr-4"
-                        // onClick={() => setTopState(3)}
-                      >
+                      <div className="flex justify-between items-center cursor-pointer mr-4">
                         {topState == 2 && (
                           <div className="flex items-center px-2">
                             <div className="flex items-center justify-center border-2 border-blue-600 text-blue-600 font-semibold w-8 h-8 rounded-full">
@@ -374,40 +360,83 @@ export default function Modal() {
                     )}
                   </div>
                   <div className="bg-gray-100 rounded-md shadow my-2 grid grid-cols-3 p-4">
-                    <div>
-                      <div className="flex items-center jutify-between py-2">
-                        <p className="mx-8">Field#1</p>
-                        <input
-                          type="text"
-                          value={fieldVal0}
-                          className="h-8 px-4 outline-none rounded shadow"
-                          onChange={(e) => setFieldVal0(e.target.value)}
-                        />
+                    {opt == 1 && (
+                      <div>
+                        <div className="flex flex-row items-center justify-between py-2">
+                          <p className="mx-8">PROCSS_NAME</p>
+                          <input
+                            type="text"
+                            value={fieldVal0}
+                            className="h-8 px-4 outline-none rounded shadow"
+                            onChange={(e) => setFieldVal0(e.target.value)}
+                          />
+                        </div>
+                        <div className="flex flex-row items-center justify-between py-2">
+                          <p className="mx-8">URL</p>
+                          <input
+                            type="text"
+                            value={fieldVal1}
+                            className="h-8 px-4 outline-none rounded shadow"
+                            onChange={(e) => setFieldVal1(e.target.value)}
+                          />
+                        </div>
                       </div>
-                      <div className="flex items-center jutify-between py-2">
-                        <p className="mx-8">Field#2</p>
-                        <input
-                          type="text"
-                          value={fieldVal1}
-                          className="h-8 px-4 outline-none rounded shadow"
-                          onChange={(e) => setFieldVal1(e.target.value)}
-                        />
+                    )}
+                    {opt == 2 && (
+                      <div>
+                        <div className="flex items-center justify-between py-2">
+                          <p className="mx-8">URL</p>
+                          <input
+                            type="text"
+                            value={fieldVal0}
+                            className="h-8 px-4 outline-none rounded shadow"
+                            onChange={(e) => setFieldVal0(e.target.value)}
+                          />
+                        </div>
+                        <div className="flex items-center justify-between py-2">
+                          <p className="mx-8">load</p>
+                          <input
+                            type="text"
+                            value={fieldVal1}
+                            className="h-8 px-4 outline-none rounded shadow"
+                            onChange={(e) => setFieldVal1(e.target.value)}
+                          />
+                        </div>
+                        <div className="flex items-center justify-between py-2">
+                          <p className="mx-8">time</p>
+                          <input
+                            type="text"
+                            value={fieldVal2}
+                            className="h-8 px-4 outline-none rounded shadow"
+                            onChange={(e) => setFieldVal2(e.target.value)}
+                          />
+                        </div>
                       </div>
-                      <div className="flex items-center jutify-between py-2">
-                        <p className="mx-8">Field#3</p>
-                        <input
-                          type="text"
-                          value={fieldVal2}
-                          className="h-8 px-4 outline-none rounded shadow"
-                          onChange={(e) => setFieldVal2(e.target.value)}
-                        />
+                    )}
+                    {opt == 3 && (
+                      <div>
+                        <div className="flex items-center justify-between py-2">
+                          <p className="mx-8">URL</p>
+                          <input
+                            type="text"
+                            value={fieldVal0}
+                            className="h-8 px-4 outline-none rounded shadow"
+                            onChange={(e) => setFieldVal0(e.target.value)}
+                          />
+                        </div>
+                        <div className="flex items-center justify-between py-2">
+                          <p className="mx-8">time</p>
+                          <input
+                            type="text"
+                            value={fieldVal1}
+                            className="h-8 px-4 outline-none rounded shadow"
+                            onChange={(e) => setFieldVal1(e.target.value)}
+                          />
+                        </div>
                       </div>
-                    </div>
-                    <div></div>
-                    <div></div>
+                    )}
                   </div>
                 </div>
-                {/*footer*/}
                 <div className="flex items-center justify-end px-6 pb-4 border-t border-solid border-blueGray-200 rounded-b">
                   <button
                     className="text-white rounded-lg bg-blue-500 font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 hover:bg-blue-700 mr-8"

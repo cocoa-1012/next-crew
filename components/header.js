@@ -84,7 +84,6 @@ export default function Header(data) {
             <div className="py-1">
               <Menu.Item>
                 {({ active }) => (
-                  // <Link href="/">
                   <p
                     className={classNames(
                       active ? "bg-gray-100 text-gray-900" : "text-gray-700",
@@ -94,7 +93,6 @@ export default function Header(data) {
                   >
                     Log Out
                   </p>
-                  // </Link>
                 )}
               </Menu.Item>
             </div>
