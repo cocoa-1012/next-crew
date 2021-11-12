@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { mainAPIURL } from "../config/api";
+import { mainAPIURL, TeamID } from "../config/api";
 import AttacksModal from "./attacksModal";
 import AttackTable from "./attackTable";
 import PaginationSection from "./paginationSection";
@@ -9,8 +9,10 @@ export default function AttacksMain() {
   const [attackList, setAttackList] = useState([]);
   const sendGetRequest = async () => {
     try {
-      const resp = await axios.get(mainAPIURL + "/api/v1/attacks");
-      setAttackList(resp.data);
+      const resp = await axios.get(
+        mainAPIURL + "/api/v1/teams/" + TeamID + "/attacks"
+      );
+      setAttackList(resp.data.results);
     } catch (err) {
       console.error(err);
     }

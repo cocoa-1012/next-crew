@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-
+import AttacksViewModal from "./attacksViewModal";
 export default function AttackTable(data) {
   console.log("Child", data.data[0].params);
   return (
@@ -20,12 +20,6 @@ export default function AttackTable(data) {
                     scope="col"
                     className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                   >
-                    Kind
-                  </th>
-                  <th
-                    scope="col"
-                    className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                  >
                     Description
                   </th>
                   <th
@@ -37,7 +31,7 @@ export default function AttackTable(data) {
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
-                {data.data.map((item) => (
+                {data.data.map((item, index) => (
                   <tr key={item.name}>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="flex items-center">
@@ -49,20 +43,12 @@ export default function AttackTable(data) {
                       </div>
                     </td>
                     <td className="px-4 py-4 whitespace-nowrap">
-                      <div className="text-sm text-gray-900">{item.kind}</div>
-                    </td>
-                    <td className="px-4 py-4 whitespace-nowrap">
                       <div className="text-sm text-gray-900 max-w-screen-sm overflow-x-hidden">
                         {item.description}
                       </div>
                     </td>
                     <td className="px-12 py-4 whitespace-nowrap text-right text-sm font-medium">
-                      <a
-                        href="#"
-                        className="text-indigo-600 hover:text-indigo-900"
-                      >
-                        View
-                      </a>
+                      <AttacksViewModal item={item} />
                     </td>
                   </tr>
                 ))}
