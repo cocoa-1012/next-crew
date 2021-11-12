@@ -96,27 +96,27 @@ export default function AttacksViewModal(data) {
                         </div>
                         <div className="text-left">
                           {data.item.params.PROCSS_NAME && (
-                            <p className="py-2 mx-4">
+                            <p className="py-0 mx-4">
                               PROCSS_NAME : {data.item.params.PROCSS_NAME}
                             </p>
                           )}
                           {data.item.params.URL && (
-                            <p className="py-2 mx-4">
+                            <p className="py-0 mx-4">
                               URL : {data.item.params.URL}
                             </p>
                           )}
                           {data.item.params.load && (
-                            <p className="py-2 mx-4">
+                            <p className="py-0 mx-4">
                               load : {data.item.params.load}
                             </p>
                           )}
                           {data.item.params.time && (
-                            <p className="py-2 mx-4">
+                            <p className="py-0 mx-4">
                               time : {data.item.params.time}
                             </p>
                           )}
                           {data.item.params.PROCESS_NAME && (
-                            <p className="py-2 mx-4">
+                            <p className="py-0 mx-4">
                               PROCESS_NAME : {data.item.params.PROCESS_NAME}
                             </p>
                           )}
